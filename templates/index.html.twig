@@ -1,3 +1,11 @@
 {% block body %}
 
+    <h1>coucou</h1>
+
+    {{ form(form) }}
+
+    {% if value is not null %}
+        <h1>le résultat est de : {{ value }}</h1>
+    {% endif %}
+
 {% endblock body %}

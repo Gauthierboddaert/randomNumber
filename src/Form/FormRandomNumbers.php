@@ -9,7 +9,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Regex;
 
 
-class FormRandom extends AbstractType
+class FormRandomNumbers extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -24,6 +24,14 @@ class FormRandom extends AbstractType
                     ],
                 ])
             ->add('numberMax', TextType::class, [
+                'constraints' => [
+                    new Regex([
+                        'pattern' => '/^\d+$/',
+                        'message' => 'Veuillez saisir un entier.',
+                    ]),
+                ],
+            ])
+            ->add('numberOfNumber', TextType::class, [
                 'constraints' => [
                     new Regex([
                         'pattern' => '/^\d+$/',
